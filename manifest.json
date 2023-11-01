@@ -4,15 +4,15 @@
     "name": "Netiquette",
     "description": "A Chrome extension to enhance web browsing with keyboard shortcuts and internet safety tips.",
     "version": "1.0",
-    "comments": [
-      "This is the main configuration file for our Chrome extension."
-    ],
     "permissions": [
       "activeTab",
       "storage",
       "tabs",
       "bookmarks"
     ],
+    "background": {
+      "service_worker": "shortcut.js"
+    },
     "browser_action": {
       "default_popup": "popup.html",
       "default_icon": {
