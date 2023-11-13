@@ -15,8 +15,10 @@ const adSites = [
   //Listener to block the domains listed above
   chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
+      window.alert("This page was blocked due to it being an advertisement site")
       return { cancel: true };
     },
     { urls: adSites },
-    ["blocking"]
+    ["blocking"],
   );
+  
