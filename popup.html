@@ -1,13 +1,92 @@
-<!-- COMP195/popup.html -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Netiquette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="popup.css">
+  
 </head>
 <body>
-  <h1>Welcome to Netiquette</h1>
-  <p>Learn keyboard shortcuts and stay safe online.</p>
+  <h1 class="dynamic-theme-color header-with-logo">
+    <img src="images/chrome48.png" alt="Netiquette logo" class="header-logo" />
+    <div class="header-text">
+      <span>Netiquette</span>
+    </div>
+  </h1>
+  <p class="readable-text">Learn keyboard shortcuts and stay safe online.</p>
+
+  <section id="shortcut-list" class="modern-border" class="dynamic-theme-color">
+    <h3 class="readable-text">Shortcut List</h3>
+    <label class="readable-text">
+      New Tab: <input type="checkbox" id="new-tab">
+    </label>
+    <label class="readable-text">
+      New Window: <input type="checkbox" id="new-window">
+    </label>
+    <label class="readable-text">
+      Close Tab: <input type="checkbox" id="close-tab">
+    </label>
+    <label class="readable-text">
+      Close Window: <input type="checkbox" id="close-window">
+    </label>
+    <label class="readable-text">
+      Bookmark Page: <input type="checkbox" id="bookmark-page">
+    </label>
+  </section>
+
+  <section id="theme-color" class="modern-border">
+    <h3 class="readable-text">Choose Your Theme Color</h3>
+    <select id="colorPicker">
+      <option value="default">Default</option>
+      <option value="#FFB6C1">Light Pink</option>
+      <option value="#ADD8E6">Light Blue</option>
+      <option value="#90EE90">Light Green</option>
+      <option value="#FFDAB9">Peach Puff</option>
+      <option value="#D3D3D3">Light Gray</option>
+      <option value="#FFFFFF">White</option>  
+    </select>
+  </section>
+
+  <section id="customize-shortcut" class="modern-border" class="dynamic-theme-color">
+    <h3 class="readable-text">Customize Your Shortcuts</h3>
+    <form id="shortcut-form">
+      <input type="submit" value="Save Preferences" id="save-preferences">
+    </form>
+  </section>
+
+  <section id="safety-tips" class="modern-border" class="dynamic-theme-color">
+    <h3 class="readable-text">Quick Safety Tips</h3>
+    <label class="switch readable-text">
+      <input type="checkbox" id="safetyTipsToggle">
+      <span class="slider round"></span>
+  </label>
+  <span class="readable-text">Toggle Safety Tips</span>
+    <button id="show-tips">Show Tips</button>
+  </section>
+
+  <section id="user-guide" class="modern-border" class="dynamic-theme-color">
+    <h3 class="readable-text">Need Help?</h3>
+    <button id="open-user-guide">Open User Guide</button>
+  </section>
+  <script src="popup.js"></script>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <img src="images/chrome48.png" alt="Netiquette logo" class="header-logo" />
+      <p>Preferences saved!</p>
+    </div>
+  </div>
+
+  <div id="shortcutModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="shortcutMessage"></p>
+    </div>
+  
+  </div>
+  <script src=""popup.js></script>
 </body>
 </html>
-<!-- update -->
