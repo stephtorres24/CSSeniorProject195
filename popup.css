@@ -1,1 +1,170 @@
-
+body, h1, p, form, section {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* added a background color & some padding */
+  body {
+    background-color: #f9f9f9;
+    padding: 10px;
+    font-family: Orbitron, sans-serif;
+  }
+  
+  /* header styles */
+  h1 {
+    background-color: navy;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /*font-family: Roboto, sans-serif; */
+  }
+  #shortcut-list label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: navy;  
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: pink;
+  }
+  .readable-text {
+    font-family: 'Open+Sans', sans-serif;
+  }
+  @media (min-width: 600px) {
+    button {
+      width: auto;
+    }
+  }
+  /* paragraph and section styling */
+  p {
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  .modern-border {
+    border-radius: 12px;
+    padding: 16px;
+    border: 2px solid #ccc;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 16px 0;
+  }
+  /* form & customization section */
+  #customize-shortcut {
+    background-color: #f2f2f2;
+  }
+  #customize-shortcut h3,
+  #safety-tips h3 {
+    margin-bottom: 10px;
+  }
+  .hidden {
+    display: none;
+  }
+  #logo {
+    width: 48px;
+    height: 48px;
+  }
+  .header-with-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo {
+    margin-right: 10px; 
+  }
+  
+  .header-text {
+    text-align: right; 
+  }
+  #toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  #colorPicker {
+    margin: 5px 0;
+    width: 100%;
+  }
+  form input[type="text"],
+  form select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form input[type="submit"] {
+    background-color: navy;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: pink;
+  }
+  .modal {
+    display: none; 
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%; 
+    font-family: 'Open+Sans', sans-serif;
+  }
+  
+  .modal img {
+    display: block;
+    margin: 0 auto;
+    width: 50px; 
+    height: 50px; 
+  }
+  /* safety tips section */
+  #safety-tips {
+    background-color:white;
+  }
+  
