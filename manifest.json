@@ -8,29 +8,8 @@
       "activeTab",
       "storage",
       "tabs",
-      "bookmarks",
-      "windows"
+      "bookmarks"
     ],
-    "background": {
-      "scripts": ["background.js"],
-      "persistent": true
-    },
-    "commands": {
-      "close-window": {
-        "suggested_key": {
-          "default": "Ctrl+Shift+U",
-          "mac": "Command+Shift+U"
-        },
-        "description": "Close current window"
-      },
-      "bookmark-page": {
-        "suggested_key": {
-          "default": "Ctrl+D",
-          "mac": "Command+D"
-        },
-        "description": "Bookmark current page"
-      }
-    },
     "browser_action": {
       "default_popup": "popup.html",
       "default_icon": {
