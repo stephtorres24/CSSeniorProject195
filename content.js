@@ -1,5 +1,41 @@
+function addShortcutPopup(){
+  console.log("Content script loaded;")
+    var shortcutPoppedUp = false;
+    const elem = document.createElement('div');
+    elem.id = 'shortcutPopup';
+    elem.style.cssText = 'position:fixed;top:50px;right:20px;width:15%;height:10%;text-align:center;font-family:Tahoma, sans-serif;line-height:1.1em;display:flex;align-items:center;justify-content:center;opacity:0.7;z-index:100;border-radius:15px;border: 2px solid #000000;background:#F00';
+    
+    while(!shortcutPoppedUp){
+        var pickTip = Math.floor(Math.random() * 4);
+        switch(pickTip) {
+            case 0:
+              elem.innerHTML = 'New Tab<br>Ctrl+T';
+              shortcutPoppedUp = true;
+              break;
+            case 1:
+              elem.innerHTML = 'New Bookmark<br>Ctrl+D';
+              shortcutPoppedUp = true;
+              break;
+            case 2:
+              elem.innerHTML = 'Close Tab<br>Ctrl+W';
+              shortcutPoppedUp = true;
+              break;
+            case 3:
+              elem.innerHTML = 'Close Window<br>Ctrl+Shift+W';
+              shortcutPoppedUp = true;
+              break;
+          }
+    }
+    document.body.appendChild(elem);
+    setTimeout(function () {
+        console.log("timer expired; removing popup from view");
+        document.getElementById('shortcutPopup').remove();
+    }, 3000);
+}
+
 //listen for page load event
 window.addEventListener('load', function () {
+    addShortcutPopup();
     // Check if this is a new tab or a regular webpage
     if (window.location.href === 'chrome://newtab/') {
       // Handle new tab behavior, e.g., display a message

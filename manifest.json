@@ -1,6 +1,6 @@
 
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Netiquette",
     "description": "A Chrome extension to enhance web browsing with keyboard shortcuts and internet safety tips.",
     "version": "1.0",
@@ -8,12 +8,10 @@
       "activeTab",
       "storage",
       "tabs",
-      "bookmarks",
-      "webRequest",
-      "webRequestBlocking",
-      "<all_urls>"
+      "bookmarks"
     ],
-    "browser_action": {
+    "host_permissions": ["https://*/*"],
+    "action": {
       "default_popup": "popup.html",
       "default_icon": {
         "16": "images/chrome16.png",
@@ -29,12 +27,15 @@
     
     "content_scripts": [
       {
-        "matches": ["<all_urls>"],
+        "matches": ["*://*/*"],
         "js": ["content.js"]
       }
     ],
     "web_accessible_resources": [
-      "images/*"
+      {
+        "resources":["images/*"],
+        "matches":["*://*/*"]
+      }
     ]
   }
   
