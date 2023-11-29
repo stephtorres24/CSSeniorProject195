@@ -1,6 +1,6 @@
 //Popup js File 
-
 document.addEventListener('DOMContentLoaded', () => {
+ 
   function applyThemeColor() {
     const savedColor = localStorage.getItem('themeColor');
     if (savedColor) {
@@ -110,4 +110,9 @@ function showShortcutPrompt(id, command) {
       let randomIndex = Math.floor(Math.random() * safetyTips.length);
       alert(safetyTips[randomIndex]);
   });
+
+  document.getElementById('refreshButton').addEventListener('click',function(){
+    console.log('btnComment worked')
+    window.location.reload();
+ });
 });
