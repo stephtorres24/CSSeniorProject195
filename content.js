@@ -3,13 +3,17 @@ function addShortcutPopup(){
     var shortcutPoppedUp = false;
     const elem = document.createElement('div');
     elem.id = 'shortcutPopup';
-    elem.style.cssText = 'position:fixed;top:50px;right:20px;width:15%;height:10%;text-align:center;font-family:Tahoma, sans-serif;line-height:1.1em;display:flex;align-items:center;justify-content:center;opacity:0.7;z-index:100;border-radius:15px;border: 2px solid #000000;background:#F00';
+    elem.style.cssText = 'position:fixed;top:50px;right:20px;width:22%;height:12%;text-align:center;font-size: 1.5em;font-family:Tahoma, sans-serif;font-weight:600;line-height:1.1em;display:flex;align-items:center;justify-content:center;opacity:0.7;z-index:100;border-radius:15px;border: 2px solid #000000;background:#F00;-webkit-text-stroke-width: 0.2px;-webkit-text-stroke-color: white;';
     
     while(!shortcutPoppedUp){
         var pickTip = Math.floor(Math.random() * 4);
         switch(pickTip) {
             case 0:
               elem.innerHTML = 'New Tab<br>Ctrl+T';
+              shortcutPoppedUp = true;
+              break;
+            case 1:
+              elem.innerHTML = 'New Window<br>Ctrl+N';
               shortcutPoppedUp = true;
               break;
             case 1:
@@ -30,7 +34,7 @@ function addShortcutPopup(){
     setTimeout(function () {
         console.log("timer expired; removing popup from view");
         document.getElementById('shortcutPopup').remove();
-    }, 3000);
+    }, 5000);
 }
 
 //listen for page load event
@@ -56,18 +60,17 @@ window.addEventListener('load', function () {
   
       // Add a tooltip to the scroll wheel
       window.addEventListener('wheel', function (event) {
-        if (event.deltaY > 0) {
           const tooltip = document.createElement('div');
-          tooltip.textContent = 'Keyboard Shortcut: Ctrl + Down Arrow';
-          tooltip.style.position = 'fixed';
-          tooltip.style.top = '10px';
-          tooltip.style.left = '10px';
+          tooltip.textContent = 'Scroll: Arrow keys → ↑ ↓ ←';
+          tooltip.id = 'scrollTooltip';
+          tooltip.style.cssText = 'position:fixed;top:50px;left:30px;width:22%;height:12%;text-align:center;font-size: 1.5em;font-family:Tahoma, sans-serif;font-weight:600;line-height:1.1em;display:flex;align-items:center;justify-content:center;opacity:0.08;z-index:100;border-radius:15px;border: 2px solid #000000;background:#F00;-webkit-text-stroke-width: 0.2px;-webkit-text-stroke-color: white;';
+    
           document.body.appendChild(tooltip);
+          
           // Remove the tooltip after a few seconds
           setTimeout(() => {
             tooltip.remove();
-          }, 3000);
-        }
+          }, 300);
       });
   
       // Add best practice tooltips for password prompts
