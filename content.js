@@ -82,7 +82,13 @@ window.addEventListener('load', function () {
       const passwordPrompts = document.querySelectorAll('input[type="password"]');
       passwordPrompts.forEach(function (prompt) {
         prompt.addEventListener('focus', function () {
-          alert('Tip: Create a secure password with a mix of letters, numbers, and symbols.');
+          var passwordTip = Math.floor(Math.random() * 2);
+          switch(passwordTip){
+            case 0:
+              alert('Tip: Create a secure password; 12 characters minimum, with a mix of upper-and-lowercase letters, numbers, and symbols.');
+            case 1:
+              alert('Tip: Create a secure password; try a phrase only you would know.');
+          }
         });
       });
   
