@@ -31,7 +31,15 @@ if (chrome.runtime && !!chrome.runtime.getManifest()) {
       {id: 'new-window', command: 'Ctrl+N (Cmd+N on Mac)'},
       {id: 'close-tab', command: 'Ctrl+W (Cmd+W on Mac)'},
       {id: 'close-window', command: 'Ctrl+Shift+U (Cmd+Shift+Y on Mac)'},
-      {id: 'bookmark-page', command: 'Ctrl+D (Cmd+D on Mac)'}
+      {id: 'next-tab', command: 'Ctrl+PageDown (Cmd+PageDown on Mac)'},
+      {id: 'previous-tab', command: 'Ctrl+PageUp (Cmd+PageUp on Mac)'},
+      {id: 'load-prev-page', command: 'Alt+Left (Cmd+Left on Mac)'},
+      {id: 'load-next-page', command: 'Alt+Right (Cmd+Right on Mac)'},
+      {id: 'bookmark-page', command: 'Ctrl+D (Cmd+D on Mac)'},
+      {id: 'cursor-next-word', command: 'Alt+Right (Option+Right on Mac)'},
+      {id: 'delete-prev-word', command: 'Ctrl+Delete (Option+PageDown on Mac)'}
+      
+
     ];
     //function to show shortcut prompt 
   function showShortcutPrompt(id, command) {

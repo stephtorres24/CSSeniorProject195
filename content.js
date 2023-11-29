@@ -1,4 +1,4 @@
-function addShortcutPopup(){
+function addShortcutPopup(is_OSX){
   console.log("Content script loaded;")
   var shortcutPoppedUp = false;
   const elem = document.createElement('div');
@@ -10,26 +10,61 @@ function addShortcutPopup(){
     });
   elem.classList.add("netiquette");
     while(!shortcutPoppedUp){
-        var pickTip = Math.floor(Math.random() * 5);
+        var pickTip = Math.floor(Math.random() * 11);
         switch(pickTip) {
             case 0:
-              elem.innerHTML = 'New Tab<br>Ctrl+T';
+              if (is_OSX){  elem.innerHTML = 'New Tab<br>⌘+T';}
+              else{elem.innerHTML = 'New Tab<br>Ctrl+T';}
               shortcutPoppedUp = true;
               break;
             case 1:
-              elem.innerHTML = 'New Window<br>Ctrl+N';
+              if (is_OSX){  elem.innerHTML = 'New Window<br>⌘+N';}
+              else{elem.innerHTML = 'New Window<br>Ctrl+N';}
               shortcutPoppedUp = true;
               break;
             case 2:
-              elem.innerHTML = 'New Bookmark<br>Ctrl+D';
+              if(is_OSX){elem.innerHTML = 'Close Tab<br>⌘+W';}
+              else{elem.innerHTML = 'Close Tab<br>Ctrl+W';}
               shortcutPoppedUp = true;
               break;
             case 3:
-              elem.innerHTML = 'Close Tab<br>Ctrl+W';
+              if(is_OSX){elem.innerHTML = 'Close Window<br>⌘+Shift+W';}
+              else{elem.innerHTML = 'Close Window<br>Ctrl+Shift+W';}
               shortcutPoppedUp = true;
               break;
             case 4:
-              elem.innerHTML = 'Close Window<br>Ctrl+Shift+W';
+              if(is_OSX){elem.innerHTML = 'Next Tab<br>⌘+Opt+→';}
+              else{elem.innerHTML = 'Next Tab<br>Ctrl+PgDn';}
+              shortcutPoppedUp = true;
+              break;
+            case 5:
+              if(is_OSX){elem.innerHTML = 'Previous Tab<br>⌘+Opt+←';}
+              else{elem.innerHTML = 'Previous Tab<br>Ctrl+PgDn';}
+              shortcutPoppedUp = true;
+              break;
+            case 6:
+              if(is_OSX){elem.innerHTML = 'Open Prev Page <br>(History) ⌘+[ or ⌘+←';}
+              else{elem.innerHTML = 'Open Prev Page <br>(History) Alt+←';}
+              shortcutPoppedUp = true;
+              break;
+            case 7:
+              if(is_OSX){elem.innerHTML = 'Open Next Page <br>(History) ⌘+] or ⌘+→';}
+              else{elem.innerHTML = 'Open Next Page <br>(History) Alt+→';}
+              shortcutPoppedUp = true;
+              break;
+             case 8:
+              if(is_OSX){elem.innerHTML = 'New Bookmark<br>⌘+D';}
+              else{elem.innerHTML = 'New Bookmark<br>Ctrl+D';}
+              shortcutPoppedUp = true;
+              break;
+             case 9:
+              if(is_OSX){elem.innerHTML = '(Typing) Next Word Opt+→';}
+              else{elem.innerHTML = '(Typing) Next Word Ctrl+→';}
+              shortcutPoppedUp = true;
+              break;
+            case 10:
+              if(is_OSX){elem.innerHTML = 'Delete Prev Word <br>Opt+Delete';}
+              else{elem.innerHTML = 'Delete Prev Word <br>Ctrl+Backspace';}
               shortcutPoppedUp = true;
               break;
           }
@@ -44,8 +79,8 @@ function addShortcutPopup(){
 //listen for page load event
 window.addEventListener('load', function () {
     localStorage.setItem("themeColor", "#F2EFC7");
-
-    addShortcutPopup();
+    const is_OSX = window.navigator.userAgent.indexOf("Mac OS") != -1;
+    addShortcutPopup(is_OSX);
     // Check if this is a new tab or a regular webpage
 
       // Handle regular webpage behavior
